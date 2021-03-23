@@ -1,30 +1,8 @@
-.NavbarItems {
-    background: linear-gradient(90deg, rgb(25, 169, 207) 0%, rgb(28, 208, 255) 100%);
-    height: 90px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.2rem
-
-}
-
-.navbar-logo {
-    color: #fff;
-    justify-self: start;
-    margin-left: 20px;
-    cursor: pointer;
-}
-
-.fa-react {
-    margin-left: 0.5rem;
-    font-size: 1.6rem;
-}
-
-.nav {
+nav {
     height: 6rem;
     width: 100vw;
-    background-color: rgb(12, 53, 71);
-    box-shadow: 0 3px 20px rgba(0, 0, 0, 0.2);
+    background-image: linear-gradient(to right, rgb(12, 53, 71), rgb(12, 53, 71));
+    box-shadow: 0 3px 20px rgb(64, 137, 156);
     display: flex;
     z-index: 10;
     color: #f2f5f7;
@@ -33,43 +11,22 @@
     font-weight: 300;
 }
 
-/*Links */
-.nav-links {
-    color: white;
-    text-decoration: none;
-    padding: 0.5rem 1rem;
+.logo {
+    cursor: pointer;
     display: flex;
-    list-style: none;
-    width: 88vw;
-    justify-content: space-evenly;
+    width: 100px;
     align-items: center;
-    text-transform: uppercase;
-}
-
-.nav-links:hover {
-    cursor: pointer;
-    background-color: #19a9cf;
-    border-radius: 4px;
-    transition: all 0.2s ease-in-out;
-}
-
-.nav-links li {
+    text-align: left;
+    text-transform: capitalize;
+    font-weight: 600;
+    padding-left: 20px;
+    padding-right: 25px;
+    border-right: 1px solid rgb(97, 218, 251) !important;
     text-decoration: none;
-    margin: 0 0.7vw;
+    background-color: rgb(12, 53, 71);
 }
 
-.nav-links li:hover {
-    cursor: pointer;
-}
-
-
-.nav-links li a {
-    text-decoration: none;
-    color: #fff;
-
-}
-
-.nav-links li::after {
+.logo::after {
     content: "";
     display: block;
     height: 3px;
@@ -77,25 +34,51 @@
     background-color: #61DAFB;
     position: absolute;
     transition: all ease-in-out 250ms;
+    margin-top: 32px;
+    width: 70px;
+}
+
+/*Styling Links*/
+.nav-links {
+    display: flex;
+    list-style: none;
+    width: 88vw;
+    padding: 0 0.7vw;
+    justify-content: space-evenly;
+    align-items: center;
+    text-transform: uppercase;
+}
+
+.nav-links li {
+    text-decoration: none;
+    margin: 0 0.7vw;
+    position: relative;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #fff;
+
+}
+
+.nav-links li:hover {
+    cursor: pointer;
+}
+
+/* Change the color of the underline*/
+.nav-links li::after {
+    content: "";
+    display: block;
+    height: 3px;
+    width: 0%;
+    background-color: #61DAFB;
+    position: absolute;
+    transition: all ease-in-out 200ms;
     margin-top: 10px;
 }
 
 .nav-links li:hover::after {
-    width: 95%;
-}
-
-
-.dd-button {
-    margin-top: -8px;
-    padding: 0;
-}
-
-.fa-bars {
-    color: #fff;
-}
-
-.menu-icon {
-    display: none;
+    width: 100%;
 }
 
 /*----Spinner---------*/
@@ -176,4 +159,172 @@
         opacity: 0;
         -webkit-transform: scale(1);
     }
+}
+
+/*---------DropDown ------*/
+
+.dropdown {
+    display: inline-block;
+    position: relative;
+}
+
+.dd-button {
+    margin-top: -8px;
+    padding: 0;
+    display: inline-block;
+    border-radius: 4px;
+    padding-top: 10px;
+    background-color: transparent;
+    color: #fff;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.dd-button:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+}
+
+.dd-button li:hover {
+    color: rgb(12, 53, 71);
+    cursor: pointer;
+}
+
+.dd-button li {
+    position: relative;
+}
+
+.dd-button li::after {
+    content: "";
+    display: block;
+    height: 3px;
+    width: 1%;
+    background-color: rgb(12, 53, 71);
+    position: absolute;
+    transition: all ease-in-out 250ms;
+    margin-top: 20px;
+}
+
+.dd-button li:hover::after {
+    width: 95%;
+}
+
+.dd-input {
+    display: none;
+}
+
+.dd-menu {
+    position: absolute;
+    z-index: 100;
+    top: 100%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 0;
+    margin: 20px 20px 20px 0px;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    list-style-type: none;
+    font-size: 12px;
+}
+
+.dd-input + .dd-menu {
+    display: none;
+}
+
+.dd-input:checked + .dd-menu {
+    display: block;
+}
+
+.dd-menu li {
+    padding: 10px 0px;
+    cursor: pointer;
+    white-space: nowrap;
+    color: rgb(12, 53, 71);
+
+}
+
+.dd-menu li:hover {
+    background-color: #f6f6f6;
+}
+
+.cPanelContainer {
+    margin: auto;
+    padding: 0;
+}
+
+.cPanelHeader {
+    margin: auto;
+    padding: 50px 50px;
+    background: rgb(12, 53, 71);
+    text-align: center;
+}
+
+.cPanelHeader > h1 {
+    color: #f0f0f0;
+    font-weight: 100;
+}
+
+.cPanelHeader > span {
+    color: #f0f0f0;
+    font-weight: 100;
+    line-height: 25px;
+}
+
+.cPanelFooter {
+    margin: auto;
+    padding: 50px;
+    background: rgb(12, 53, 71);
+    text-align: center;
+}
+
+.cPanelFooter > span {
+    color: #f0f0f0;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.cPanelContent {
+    margin: auto;
+    padding: 0;
+    background: rgb(12, 53, 71);
+    text-align: center;
+    display: flex;
+}
+
+.cPanelHeader > h3 {
+    text-align: left;
+    color: #f0f0f0;
+    font-weight: 400;
+    padding-top: 15px;
+    font-size: 22px;
+
+}
+
+.cPanelHeader > p {
+    margin: auto;
+    text-align: left;
+    color: #f0f0f0;
+    font-weight: 300;
+    line-height: 15px;
+    padding: 10px;
+    padding-bottom: 10px;
+    font-size: 16px;
+}
+
+.cPanelHeader > ul > p {
+    margin: auto;
+    text-align: left;
+    color: #f0f0f0;
+    font-size: 15px;
+    font-weight: 100;
+    line-height: 16px;
+    padding-bottom: 5px;
+}
+
+.cPanelHeader > ul > p > span {
+    font-weight: 400;
 }
