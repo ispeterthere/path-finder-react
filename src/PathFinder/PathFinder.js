@@ -2,6 +2,14 @@ import React from "react"
 import "./PathFinder.css"
 import NavBar from "../components/NavBar/NavBar";
 
+export function changeDensity() {
+}
+
+
+export function changeObstacles() {
+}
+
+
 function PathFinder(){
     return (
         <div>
@@ -10,4 +18,14 @@ function PathFinder(){
     )
 }
 
-export default PathFinder
+export function resetGrid(){
+
+}
+
+
+
+export function toggleObstacles(){
+
+}
+
+export default PathFinder;
